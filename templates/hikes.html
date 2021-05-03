@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+    <div class="row">
     {% for hike in hikes %}
-        {{ hike.hike_name }}<br>
-        {{ hike.hike_duration }}<br>
-        {{ hike.hike_difficulty }}<br>
-        {{ hike.county_name }}<br>
-        {{ hike.hike_description }}<br>
-        {{ hike.hike_distance }}<br>
+        <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">{{ hike.hike_name }}</span>
+            <p>{{ hike.hike_duration }}</p>
+            <p>{{ hike.hike_difficulty }}</p>
+            <p>{{ hike.county_name }}</p>
+            <p>{{ hike.hike_description }}</p>
+            <p>{{ hike.hike_distance }}</p>
+
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
 
 {% endblock %}
