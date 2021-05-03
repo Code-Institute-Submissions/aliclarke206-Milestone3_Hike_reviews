@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikes</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for hike in hikes %}
         {{ hike.hike_name }}<br>
         {{ hike.hike_duration }}<br>
@@ -14,5 +9,5 @@
         {{ hike.hike_description }}<br>
         {{ hike.hike_distance }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
