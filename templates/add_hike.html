@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">Add Hike</h3>
+
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="hike_name" name="hike_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="hike_name">Hike Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="hike_description" name="hike_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="hike_description">Hike Description</label>
+                </div>
+            </div>
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+						<label for="is_parking">
+                            <input type="checkbox" id="is_parking" name="is_parking">
+                            <span class="lever"></span>
+                            Parking
+                        </label>
+					</div>
+				</div>
+			</div>
+        </form>
+    </div>
+
+{% endblock %}
