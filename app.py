@@ -136,6 +136,12 @@ def edit_hike(hike_id):
     return render_template("edit_hike.html", hike=hike)
 
 
+@app.route("/delete_hike/<hike_id>")
+def delete_hike(hike_id):
+    mongo.db.hikes.remove({"_id": ObjectId(hike_id)})
+    flash("Hike Successfully Deleted")
+    return redirect(url_for("get_hikes"))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

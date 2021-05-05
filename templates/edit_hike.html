@@ -46,11 +46,10 @@
                         <option value="" disabled>Choose Difficulty</option>
                         {% if hike.hike_difficulty == hike.hike_difficulty %}
                             <option value="{{ hike.hike_difficulty }}" selected>{{ hike.hike_difficulty }}</option>
-                        {% else %}
-                            <option value="1">Easy</option>
-                            <option value="2">Moderate</option>
-                            <option value="3">Difficult</option>
                         {% endif %}
+                            <option value="Easy">Easy</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Difficult">Difficult</option>
                     </select>
 					<label for="hike_difficulty">Difficulty</label>
 				</div>

@@ -24,7 +24,7 @@
         <div class="card-action">
         {% if session.user|lower == hike.created_by|lower %}
           <a href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
-          <a href="#">Delete</a>
+          <a href="{{ url_for('delete_hike', hike_id=hike._id) }}">Delete</a>
         {% endif %}
         </div>
       </div>
