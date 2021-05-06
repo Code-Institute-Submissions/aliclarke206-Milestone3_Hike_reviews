@@ -145,7 +145,7 @@ def edit_hike(hike_id):
 
 @app.route("/delete_hike/<hike_id>")
 def delete_hike(hike_id):
-    mongo.db.hikes.remove({"_id": ObjectId(hike_id)})
+    mongo.db.hikes.delete_one({"_id": ObjectId(hike_id)})
     flash("Hike Successfully Deleted")
     return redirect(url_for("get_hikes"))
 
