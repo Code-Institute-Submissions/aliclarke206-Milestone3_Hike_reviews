@@ -1,9 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
 
- <div class="row">
-      <div class="col s12 center-align">{{ hike.hike_name }}</div>
-      <div class="col s6 center-align">6-columns (one-half)</div>
-      <div class="col s6 center-align">6-columns (one-half)</div>
+<div class="row">
+    <div class="col s12 center-align">
+        <strong>
+            <h3>{{ hike.hike_name }}</h3>
+        </strong>
     </div>
+</div>
+<div class="row">
+    <div class="col s7 push-s5">
+        <ul class="collection">
+    <li class="collection-item avatar">
+      <i class="material-icons circle">folder</i>
+      <span class="title">Title</span>
+      <p>{{ hike.county_name }} <br>
+         {{ hike.hike_duration }}
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle">folder</i>
+      <span class="title">Title</span>
+      <p>{{ hike.hike_difficulty }} <br>
+         Second Line
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">play_arrow</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+    </li>
+  </ul>
+    </div>
+    <div class="col s5 pull-s7">
+    
+    </div>
+</div>
+
+
 {% endblock %}

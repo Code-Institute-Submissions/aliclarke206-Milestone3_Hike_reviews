@@ -154,6 +154,11 @@ def delete_hike(hike_id):
 def hike_page(hike_id):
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
     return render_template("hike_page.html", hike=hike)
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
     
 
 if __name__ == "__main__":
