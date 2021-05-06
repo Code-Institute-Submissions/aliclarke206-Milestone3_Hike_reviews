@@ -2,6 +2,8 @@ $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $('.timepicker').timepicker();
     $('select').formSelect();
+     $('.modal').modal();
+
     
     //code from code institute mini project 
      validateMaterializeSelect();
