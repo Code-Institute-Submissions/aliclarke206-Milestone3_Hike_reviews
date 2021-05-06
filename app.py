@@ -149,6 +149,13 @@ def delete_hike(hike_id):
     flash("Hike Successfully Deleted")
     return redirect(url_for("get_hikes"))
 
+
+@app.route("/hike_page/<hike_id>")
+def hike_page(hike_id):
+    hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
+    return render_template("hike_page.html", hike=hike)
+    
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
