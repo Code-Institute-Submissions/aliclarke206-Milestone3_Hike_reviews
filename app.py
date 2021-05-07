@@ -90,9 +90,10 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    hikes = mongo.db.hikes.find()
 
     if session["user"]:
-        return render_template("profile.html", username=session["user"])
+        return render_template("profile.html", username=session["user"], hikes=hikes)
 
     return redirect(url_for("login"))
 
@@ -142,7 +143,7 @@ def edit_hike(hike_id):
         flash("Hike Successfully Updated")
 
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
-    return render_template("edit_hike.html", hike=hike)
+    return render_template("hikes.html", hike=hike)
 
 
 @app.route("/delete_hike/<hike_id>")
