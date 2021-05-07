@@ -27,7 +27,7 @@ def get_hikes():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
+    query = request.form.get("query", "hike")
     hikes = list(mongo.db.hikes.find({"$text": {"$search": query}}))
     return render_template("hikes.html", hikes=hikes)
 
@@ -37,7 +37,7 @@ def register():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username", "").lower()})
 
         if existing_user:
             flash("Username already exists")
@@ -92,7 +92,9 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=session["user"])
+
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
