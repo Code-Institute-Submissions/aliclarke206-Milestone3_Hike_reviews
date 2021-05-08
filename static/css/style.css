@@ -39,3 +39,11 @@
     border: 2px solid rgb(4, 92, 66);
     
 }
+
+@media only screen and (min-width: 768px) {
+    .search_buttons {
+    margin-top: 20px;
+}
+  }
+
+  
