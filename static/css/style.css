@@ -33,3 +33,9 @@
     100%{transform: rotate(360deg);}
 }
 
+.parallax-container .card-panel{
+    opacity: 0.8;
+    border-radius: 25px;
+    border: 2px solid rgb(4, 92, 66);
+    
+}

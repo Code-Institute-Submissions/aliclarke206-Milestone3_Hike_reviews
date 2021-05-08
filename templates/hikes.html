@@ -3,9 +3,8 @@
 
 <div class="parallax-container">
       <div class="parallax"><img src="static/images/landing_image.jpg"></div>
-    </div>
-    <div class="container">
-      <div class="row card-panel grey lighten-5">
+      <div class="container">
+      <div class="card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
@@ -22,8 +21,11 @@
         </div>
     </form>
 </div>
+</div>
+    </div>
 
 
+    <div class="container">
 <div class="row">
     {% for hike in hikes %}
     <div class="col s12 m4">
