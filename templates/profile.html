@@ -11,6 +11,7 @@
     </div>
 </div>
 
+<div class="container">
 <div class="row">
     {% for hike in hikes %}
     {% if session.user|lower == hike.created_by|lower %}
@@ -55,6 +56,7 @@
     </div>
     {% endif %}
     {% endfor %}
+</div>
 </div>
 
 {% endblock %}

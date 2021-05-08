@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('.timepicker').timepicker();
     $('select').formSelect();
     $('.modal').modal();
-    $('.slider').slider();
+    $('.parallax').parallax();
 
 //Email function
 const btn = document.getElementById('button');
