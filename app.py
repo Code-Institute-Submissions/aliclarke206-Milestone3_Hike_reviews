@@ -143,7 +143,7 @@ def edit_hike(hike_id):
         flash("Hike Successfully Updated")
 
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
-    return render_template("hikes.html", hike=hike)
+    return render_template("edit_hike.html", hike=hike)
 
 
 @app.route("/delete_hike/<hike_id>")
@@ -156,7 +156,10 @@ def delete_hike(hike_id):
 @app.route("/hike_page/<hike_id>")
 def hike_page(hike_id):
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
-    return render_template("hike_page.html", hike=hike)
+    if session["user"]:
+        return render_template("hike_page.html", hike=hike)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/contact")

@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="#"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
 <div class="row card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
