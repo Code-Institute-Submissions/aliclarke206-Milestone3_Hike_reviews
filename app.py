@@ -110,6 +110,7 @@ def logout():
 def add_hike():
     if request.method == "POST":
         is_parking = "on" if request.form.get("is_parking") else "off"
+        is_dog_friendly = "on" if request.form.get("is_dog_friendly") else "off"
         hike = {
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
@@ -117,7 +118,8 @@ def add_hike():
             "is_parking": is_parking,
             "hike_difficulty": request.form.get("hike_difficulty"),
             "hike_duration": request.form.get("hike_duration"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "is_dog_friendly": is_dog_friendly
         }
         mongo.db.hikes.insert_one(hike)
         flash("Hike Successfully Added")
@@ -130,6 +132,7 @@ def add_hike():
 def edit_hike(hike_id):
     if request.method == "POST":
         is_parking = "on" if request.form.get("is_parking") else "off"
+        is_dog_friendly = "on" if request.form.get("is_dog_friendly") else "off"
         submit = {
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
@@ -137,7 +140,8 @@ def edit_hike(hike_id):
             "is_parking": is_parking,
             "hike_difficulty": request.form.get("hike_difficulty"),
             "hike_duration": request.form.get("hike_duration"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "is_dog_friendly": is_dog_friendly
         }
         mongo.db.hikes.update({"_id": ObjectId(hike_id)}, submit)
         flash("Hike Successfully Updated")

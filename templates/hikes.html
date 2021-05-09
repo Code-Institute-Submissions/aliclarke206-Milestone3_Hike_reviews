@@ -17,7 +17,7 @@
             </div>
             <div class="col s12 m4 search_buttons">
                 <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">
-                    <i class="fas fa-undo"></i>Reset</a>
+                    <i class="fas fa-undo left"></i>Reset</a>
                 <button type="submit" class="light-blue darken-1 btn text-shadow">
                     <i class="fas fa-search left"></i> Search
                 </button>
@@ -46,6 +46,11 @@
                 <p>Parking</p>
                 {% else %}
                 <p>No Parking</p>
+                {% endif %}
+                {% if hike.is_dog_friendly == "on" %}
+                <p>Dog Friendly</p>
+                {% else %}
+                <p>Not dog friendly</p>
                 {% endif %}
                 <p><em>by : {{ hike.created_by }}</em></p>
 

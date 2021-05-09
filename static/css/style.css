@@ -72,6 +72,27 @@ nav .sidenav-trigger i {
 
 /* ----------------------------------------Contact Page */
 
+.add_contact_image {
+    background: url(../images/hiking_img2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.add_contact_image h3 {
+    margin: 0;
+    padding: 20px;
+}
+
+.container .contact_request {
+    opacity: 0.9;
+    border-radius: 25px;
+    border: none;
+    margin: 0;
+}
+
   .contact_request, input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -151,10 +172,11 @@ nav .sidenav-trigger i {
      opacity: 0.9;
     border-radius: 25px;
     border: none;
+    padding-bottom: 20px;
     margin: 0;
 }
 
-/* -----------------------------------Prolfile page */
+/* -----------------------------------Profile page */
 
 .profile_background {
     background: url(../images/hiking_img.jpg) no-repeat center center fixed; 
@@ -175,3 +197,24 @@ nav .sidenav-trigger i {
 
 }
 
+/* -----------------------------------Login page */
+.add_login_image {
+    background: url(../images/hiking_img3.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.add_login_image h3 {
+    margin: 0;
+    padding: 20px 20px;
+}
+
+.login_redirect{
+    margin: 0;
+}
+
+.add_login_image .button {
+    border-radius: 25px;
+}
