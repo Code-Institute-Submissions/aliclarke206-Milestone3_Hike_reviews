@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="add_hike_image">
+<div class="add_edit_image">
     <h3 class="text-teal darken-4 center-align">Add Hike</h3>
 
     <div class="container">
-    <div class="row card-panel grey lighten-5">
+    <div class="row card-panel grey lighten-5 add_edit_container">
         <form class="col s12" method="POST" action="{{ url_for('add_hike') }}">
             <div class="row">
                 <div class="input-field col s12">

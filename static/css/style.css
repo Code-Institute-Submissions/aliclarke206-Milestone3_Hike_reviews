@@ -17,8 +17,10 @@ nav .sidenav-trigger i {
 }
 
 .flashes h4 {
+    margin: 0;
     line-height: 2;
 }
+
 
 /* ----------------------------------------Footer */
 .social-links li a i {
@@ -47,8 +49,10 @@ nav .sidenav-trigger i {
     100%{transform: rotate(360deg);}
 }
 
+/* -----------------------------------Search Bar*/
+
 .parallax-container .card-panel{
-    opacity: 0.8;
+    opacity: 0.9;
     border-radius: 25px;
     border: 2px solid rgb(4, 92, 66);
     
@@ -122,8 +126,8 @@ nav .sidenav-trigger i {
   }
 }
 
-/* Add hike */
-.add_hike_image{
+/* -----------------------------------Add hike */
+.add_edit_image{
     background: url(../images/landing_image.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -132,7 +136,14 @@ nav .sidenav-trigger i {
   
 }
 
-.add_hike_image h3 {
+.add_edit_image h3 {
     margin: 0;
-    padding-top: 20px;
+    padding: 20px 20px;
+}
+
+.add_edit_container {
+     opacity: 0.9;
+    border-radius: 25px;
+    border: none;
+    margin: 0;
 }
