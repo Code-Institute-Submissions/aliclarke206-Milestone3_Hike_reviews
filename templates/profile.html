@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="profile_background">
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
+        <div class="card-panel add_edit_container">
             <h3 class="center-align light-blue-text text-darken-4">
                 {{ username }}'s Profile
             </h3>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="container">
-<div class="row">
+<div class="row profile_container">
     {% for hike in hikes %}
     {% if session.user|lower == hike.created_by|lower %}
     <div class="col s12 m4">
@@ -56,6 +56,7 @@
     </div>
     {% endif %}
     {% endfor %}
+</div>
 </div>
 </div>
 

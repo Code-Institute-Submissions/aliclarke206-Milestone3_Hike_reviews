@@ -16,7 +16,8 @@
                 <label for="query">Search by county, park or hike name</label>
             </div>
             <div class="col s12 m4 search_buttons">
-                <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">Reset</a>
+                <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">
+                    <i class="fas fa-undo"></i>Reset</a>
                 <button type="submit" class="light-blue darken-1 btn text-shadow">
                     <i class="fas fa-search left"></i> Search
                 </button>
@@ -28,7 +29,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container hikes_home">
 <div class="row">
     {% for hike in hikes %}
     <div class="col s12 m4">

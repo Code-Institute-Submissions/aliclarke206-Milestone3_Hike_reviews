@@ -48,13 +48,19 @@ nav .sidenav-trigger i {
     0%{ transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
 }
+/* --------------------------------- Hikes Page*/
+.hikes_home .card {
+    opacity: 0.9;
+    border-radius: 25px;
+    border: none;
+}
 
-/* -----------------------------------Search Bar*/
+/* ----------------------------Search Bar*/
 
 .parallax-container .card-panel{
     opacity: 0.9;
     border-radius: 25px;
-    border: 2px solid rgb(4, 92, 66);
+    border: none;
     
 }
 
@@ -147,3 +153,25 @@ nav .sidenav-trigger i {
     border: none;
     margin: 0;
 }
+
+/* -----------------------------------Prolfile page */
+
+.profile_background {
+    background: url(../images/hiking_img.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.profile_container {
+    margin-bottom: 0;
+}
+
+.profile_container .card {
+    opacity: 0.9;
+    border-radius: 25px;
+    border: none;
+
+}
+
