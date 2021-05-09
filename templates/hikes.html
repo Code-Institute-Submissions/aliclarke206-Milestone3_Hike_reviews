@@ -32,7 +32,7 @@
     <div class="container hikes_home">
 <div class="row">
     {% for hike in hikes %}
-    <div class="col s12 m4">
+    <div class="col s12 m6 l4">
         <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
         <div class="card hoverable blue-grey darken-1">
             <div class="card-content white-text">
@@ -59,8 +59,12 @@
                 {% if session.user|lower == hike.created_by|lower %}
                 <a href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a> 
-
-                <!-- Modal Structure -->
+                {% endif %}
+            </div>
+        </div>
+    </a>
+    </div>
+    <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <h4>Are you Sure you want to delete?</h4>
@@ -71,11 +75,6 @@
                         <a href="{{ url_for('get_hikes') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                     </div>
                 </div>
-                {% endif %}
-            </div>
-        </div>
-    </a>
-    </div>
     {% endfor %}
 </div>
 

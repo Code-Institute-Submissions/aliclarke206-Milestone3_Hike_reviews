@@ -49,6 +49,10 @@ nav .sidenav-trigger i {
     100%{transform: rotate(360deg);}
 }
 /* --------------------------------- Hikes Page*/
+.parallax-container h2 {
+    margin: 0;
+}
+
 .hikes_home .card {
     opacity: 0.9;
     border-radius: 25px;
@@ -194,7 +198,10 @@ nav .sidenav-trigger i {
     opacity: 0.9;
     border-radius: 25px;
     border: none;
+}
 
+.profile_background .card-panel {
+    margin: 0;
 }
 
 /* -----------------------------------Login page */
