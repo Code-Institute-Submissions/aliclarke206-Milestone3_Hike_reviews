@@ -2,35 +2,40 @@
 {% block content %}
 <div class="container">
     <div class="row contact_request">
-        <div class="col m6 s12">
+       
     <form id="contact_form">
   <div class="field">
-    <label for="to_name">to_name</label>
-    <input type="text" name="to_name" id="to_name">
-  </div>
-  <div class="field">
-    <label for="from_name">from_name</label>
+    <label for="from_name">Name</label>
     <input type="text" name="from_name" id="from_name">
   </div>
   <div class="field">
-    <label for="message">message</label>
-    <input type="text" name="message" id="message">
-  </div>
-  <div class="field">
-    <label for="from_email">from_email</label>
+    <label for="from_email">Email Address</label>
     <input type="text" name="from_email" id="from_email">
   </div>
+    <div class="field">
+      <label for="country">Query</label>
+    
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+    </div>
   <div class="field">
-    <label for="reply_to">reply_to</label>
-    <input type="text" name="reply_to" id="reply_to">
+    <label for="message">message</label>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
   </div>
-
-  <input type="submit" id="button" value="Send Email" >
+  <input type="submit" id="button" value="Send Email" class="center-align" >
 </form>
 </div>
 
 
-<!-- second form-->
+
+</div>
+</div>
+
+
+<!-- second form
 <div class="col m6 s12">
         <form action="/action_page.php">
   <div class="row">
@@ -74,6 +79,5 @@
   </div>
   </form>
   </div>
-</div>
-</div>
+</div> -->
 {% endblock %}
