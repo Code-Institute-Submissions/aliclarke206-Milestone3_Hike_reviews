@@ -1,3 +1,17 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.nav-wrapper a {
+    width: clamp(200px, 50% + 20px, 800px);
+}
+
+nav .sidenav-trigger i {
+    float: right;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -106,4 +120,19 @@
     width: 100%;
     margin-top: 0;
   }
+}
+
+/* Add hike */
+.add_hike_image{
+    background: url(../images/landing_image.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+
+.add_hike_image h3 {
+    margin: 0;
+    padding-top: 20px;
 }

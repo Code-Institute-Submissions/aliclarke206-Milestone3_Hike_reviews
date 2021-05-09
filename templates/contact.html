@@ -2,7 +2,51 @@
 {% block content %}
 <div class="container">
     <div class="row contact_request">
-       
+        <div class="col m4 s12">
+            <div class="row">
+               <h4 class="center-align">Connect with us here!</h4>
+            </div>
+            <div class="row">
+                <ul class="list-inline social-links center-align">
+               <li class="list-inline-item">
+                  <a target="_blank" href="https://www.facebook.com/">
+                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                  <span class="sr-only">Facebook</span>
+                  </a>
+               </li>
+               <li class="list-inline-item">
+                  <a target="_blank" href="https://twitter.com/">
+                  <i class="fab fa-twitter" aria-hidden="true"></i>
+                  <span class="sr-only">Twitter</span>
+                  </a>
+               </li>
+               <li class="list-inline-item">
+                  <a target="_blank" href="https://ie.linkedin.com/">
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  <span class="sr-only">LinkedIn</span>
+                  </a>
+               </li>
+               <li class="list-inline-item">
+                  <a target="_blank" href="https://www.instagram.com/">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <span class="sr-only">Instagram</span>
+                  </a>
+               </li>
+               <li class="list-inline-item">
+                  <a target="_blank" href="https://www.pinterest.com/">
+                  <i class="fab fa-pinterest" aria-hidden="true"></i>
+                  <span class="sr-only">Pinterest</span>
+                  </a>
+               </li>
+            </ul>
+            </div>
+
+        </div>
+    
+       <div class="col m8 s12">
+           <div class="row">
+               <h4 class="center-align">Or drop us a line and we'll get back to you!</h4>
+            </div>
     <form id="contact_form">
   <div class="field">
     <label for="from_name">Name</label>
@@ -13,12 +57,12 @@
     <input type="text" name="from_email" id="from_email">
   </div>
     <div class="field">
-      <label for="country">Query</label>
-    
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
+      <label for="query">Query</label>
+        <select id="query" name="query">
+        <option value="General query">General query</option>
+        <option value="Report an information error">Report an information error</option>
+        <option value="Log in issues">Log in issues</option>
+        <option value="Other">Other</option>
       </select>
     </div>
   <div class="field">
@@ -30,10 +74,8 @@
 </div>
 
 
-
 </div>
 </div>
-
 
 <!-- second form
 <div class="col m6 s12">
