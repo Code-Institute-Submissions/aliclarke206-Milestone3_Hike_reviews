@@ -48,9 +48,19 @@ nav .sidenav-trigger i {
     0%{ transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
 }
+/* --------------------------------- Detail Page*/
+.add_detail_image{
+    background: url(../images/hiking_img.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 /* --------------------------------- Hikes Page*/
 .parallax-container h2 {
     margin: 0;
+    padding: 20px 20px;
 }
 
 .hikes_home .card {
