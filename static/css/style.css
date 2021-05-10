@@ -57,6 +57,16 @@ nav .sidenav-trigger i {
   background-size: cover;
 }
 
+.hike_page_container {
+    margin: 0;
+}
+
+.collection {
+    opacity: 0.9;
+    border-radius: 25px;
+    border: none;
+}
+
 /* --------------------------------- Hikes Page*/
 .parallax-container h2 {
     margin: 0;
