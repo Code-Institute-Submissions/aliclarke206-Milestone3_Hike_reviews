@@ -16,35 +16,33 @@
         frameborder="0" style="border:0"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDmPwbycvT2rSTl_s3DnROSRQ98176kDyg&q=Eiffel+Tower,Paris+France" allowfullscreen>
     </iframe>
+    <p>{{- hike.hike_description -}}</p>
     </div>
     <div class="col s12 m8">
         <ul class="collection">
-    <li class="collection-item valign-wrapper"> 
+    <li class="collection-item"> 
                 <i class="fas fa-map-marker-alt center-align"></i>
-                    <p> County <br>
-                    {{ hike.county_name }} <br>
-                    {{ hike.hike_duration }}</p>
+                    <span class="title">County {{ hike.county_name }}</span>
     </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>{{ hike.hike_difficulty }} <br>
-         Second Line
-      </p>
+    <li class="collection-item">
+       <i class="fas fa-map-marker-alt center-align"></i>
+                    <span class="title"> {{ hike.hike_difficulty }}</span>
     </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
+    <li class="collection-item">
+      <i class="fas fa-map-marker-alt center-align"></i>
+                    <span class="title">{{ hike.hike_duration }}</span>
     </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
+    <li class="collection-item">
+      <i class="fas fa-map-marker-alt center-align"></i>
+                    <span class="title">{{ hike.hike_duration }}</span>
+    </li>
+    <li class="collection-item">
+      <i class="fas fa-map-marker-alt center-align"></i>
+                    <span class="title">{{ hike.hike_duration }}</span>
+    </li>
+    <li class="collection-item">
+      <i class="fas fa-map-marker-alt center-align"></i>
+                    <span class="title">{{ hike.hike_duration }}</span>
     </li>
   </ul>
     </div>
