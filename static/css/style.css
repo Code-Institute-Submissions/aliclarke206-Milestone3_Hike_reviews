@@ -73,10 +73,15 @@ nav .sidenav-trigger i {
     padding: 20px 20px;
 }
 
+
 .hikes_home .card {
     opacity: 0.9;
     border-radius: 25px;
     border: none;
+}
+
+.landing_description {
+    background-image: linear-gradient(to bottom right, rgba(8, 128, 158, 0.651) 1%, rgb(255, 255, 255, 0));
 }
 
 /* ----------------------------Search Bar*/
