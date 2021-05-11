@@ -16,19 +16,25 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="county_name" name="county_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
+                    <select id="county_name" name="county_name" class="validate" required>
+                        <option value="" disabled selected>Choose County</option>
+                        <option value="Antrim">Antrim</option>
+                        <option value="Dublin">Dublin</option>
+                    </select>
+                    <label for="county_name">County</label>
+                    </div>
+             <!--{% for county in counties %} 
+                <div class="input-field col s12">
+                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
+                    <select id="county_name" name="county_name" class="validate" required>
+                        <option value="" disabled selected>Choose County</option>
+                        option value="Antrim">{{ counties.county_name }}</option>
+                        <option value="Antrim">Dublin</option>
+                    </select>
                     <label for="county_name">County</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="hike_description" name="hike_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="hike_description">Hike Description</label>
-                </div>
+               {% endfor %}--> 
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -48,7 +54,15 @@
                     </select>
 					<label for="hike_difficulty">Difficulty</label>
 				</div>
-			</div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="hike_description" name="hike_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="hike_description">Hike Description</label>
+                </div>
+            </div>
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<div class="switch">

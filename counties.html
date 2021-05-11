@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile_background">
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel add_edit_container">
+            <h3 class="center-align light-blue-text text-darken-4">
+                {{ username }}'s Profile
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<div class="row profile_container">
+    {% for hike in hikes %}
+    {% if session.user|lower == hike.created_by|lower %}
+    <div class="col s12 m6 l4">
+        <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
+            <div class="card hoverable blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ hike.hike_name }}</span>
+                    <p>{{ hike.hike_duration }}</p>
+                    <p>{{ hike.hike_difficulty }}</p>
+                    <p>{{ hike.county_name }}</p>
+                    <p>{{ hike.hike_description }}</p>
+                    <p>{{ hike.hike_distance }}</p>
+                    {% if hike.is_parking == "on" %}
+                    <p>Parking</p>
+                    {% else %}
+                    <p>No Parking</p>
+                    {% endif %}
+                    <p><em>by : {{ hike.created_by }}</em></p>
+
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a>
+
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Are you Sure you want to delete?</h4>
+                            <p>Your hike will be permanently removed from the database</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
+                                class="modal-close waves-effect waves-green btn-flat">Delete</a>
+                            <a href="{{ url_for('get_hikes') }}"
+                                class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                        </div>
+                    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock %}

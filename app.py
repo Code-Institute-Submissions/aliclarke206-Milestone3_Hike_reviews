@@ -125,6 +125,7 @@ def add_hike():
         flash("Hike Successfully Added")
         return redirect(url_for("get_hikes"))
 
+    counties = mongo.db.counties.find().sort("county_name", 1)
     return render_template("add_hike.html")
 
 
@@ -144,6 +145,7 @@ def edit_hike(hike_id):
             "is_dog_friendly": is_dog_friendly
         }
         mongo.db.hikes.update({"_id": ObjectId(hike_id)}, submit)
+        counties = mongo.db.counties.find().sort("county_name", 1)
         flash("Hike Successfully Updated")
 
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
@@ -169,6 +171,12 @@ def hike_page(hike_id):
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+
+@app.route("/get_counties")
+def get_counties():
+    counties = list(mongo.db.counties.find().sort("county_name", 1))
+    return render_template("counties.html", counties=counties)
     
 
 if __name__ == "__main__":
