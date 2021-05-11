@@ -67,6 +67,10 @@ nav .sidenav-trigger i {
     border: none;
 }
 
+.collection i {
+    float: left;
+}
+
 /* --------------------------------- Hikes Page*/
 .parallax-container h2 {
     margin: 0;
