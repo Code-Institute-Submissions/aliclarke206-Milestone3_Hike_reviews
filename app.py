@@ -128,7 +128,9 @@ def add_hike():
         return redirect(url_for("profile",username=session["user"]))
 
     counties = mongo.db.counties.find().sort("county_name", 1)
-    return render_template("add_hike.html")
+    #print(counties.count())
+    return render_template("add_hike.html", counties=counties)
+
 
 
 @app.route("/edit_hike/<hike_id>", methods=["GET", "POST"])

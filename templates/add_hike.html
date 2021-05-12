@@ -19,23 +19,14 @@
                     <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
                     <select id="county_name" name="county_name" class="validate" required>
                         <option value="" disabled selected>Choose County</option>
-                        <option value="Antrim">Antrim</option>
-                        <option value="Dublin">Dublin</option>
-                        <option value="Kerry">Kerry</option>
+                        {% for county in counties %} 
+                        <option value="{{ county.county_name }}">{{ county.county_name }}</option>
+                        {% endfor %}
                     </select>
                     <label for="county_name">County</label>
                     </div>
-             <!--{% for county in counties %} 
-                <div class="input-field col s12">
-                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
-                    <select id="county_name" name="county_name" class="validate" required>
-                        <option value="" disabled selected>Choose County</option>
-                        option value="{{ counties.county_name }}">{{ counties.county_name }}</option>
-                        <option value="Antrim">Dublin</option>
-                    </select>
-                    <label for="county_name">County</label>
-                </div>
-               {% endfor %}--> 
+            
+             
             </div>
             <div class="row">
                 <div class="input-field col s12">
