@@ -29,6 +29,11 @@
                     {% else %}
                     <p>No Parking</p>
                     {% endif %}
+                    {% if hike.is_dog_friendly == "on" %}
+                    <p>Dog Friendly</p>
+                    {% else %}
+                    <p>Not dog friendly</p>
+                    {% endif %}
                     <p><em>by : {{ hike.created_by }}</em></p>
 
                 </div>

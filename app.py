@@ -125,7 +125,7 @@ def add_hike():
         }
         mongo.db.hikes.insert_one(hike)
         flash("Hike Successfully Added")
-        return redirect(url_for("get_hikes"))
+        return redirect(url_for("profile",username=session["user"]))
 
     counties = mongo.db.counties.find().sort("county_name", 1)
     return render_template("add_hike.html")
@@ -153,7 +153,7 @@ def edit_hike(hike_id):
         flash("Hike Successfully Updated")
         return redirect(url_for("profile",username=session["user"]))
 
-    hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
+    hike = mongo.db.hikes.find_one_or_404({"_id": ObjectId(hike_id)})
     return render_template("edit_hike.html", hike=hike)
 
 
