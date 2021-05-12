@@ -101,6 +101,60 @@ nav .sidenav-trigger i {
     margin: 0;
 }
 
+.landing_description h4 {
+    margin: 0;
+}
+
+.landing_icon_1 {
+    background-image: url(../images/landing_icon_1.jpg);
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin:auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 3.75rem;
+}
+
+.landing_icon_1 i {
+    font-size: 4rem;
+    color: #fffef7;
+    filter: drop-shadow(2px 3px 3px black);
+}
+
+.landing_icon_2 {
+    background-image: url(../images/landing_icon_2.jpg);
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin:auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 3.75rem;
+}
+
+.landing_icon_2 i {
+    font-size: 4rem;
+    color: #fffef7;
+    filter: drop-shadow(2px 3px 3px black);
+}
+
+.landing_icon_3 {
+    background-image: url(../images/landing_icon_3.jpg);
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin:auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 3.75rem;
+}
+
+.landing_icon_3 i {
+    font-size: 4rem;
+    color: #fffef7;
+    filter: drop-shadow(2px 3px 3px black);
+}
 /* ----------------------------Search Bar*/
 
 .parallax-container .card-panel{

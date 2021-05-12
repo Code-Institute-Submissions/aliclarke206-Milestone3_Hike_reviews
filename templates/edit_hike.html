@@ -17,9 +17,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
                     <select id="county_name" name="county_name" class="validate" required>
-                        <option value="" disabled selected>Choose County</option>
+                        <option value="{{ hike.county_name }}" disabled selected>{{ hike.county_name }}</option>
                         {% for county in counties %} 
+                        {% if county.county_name == hike.category_name %}
                         <option value="{{ county.county_name }}">{{ county.county_name }}</option>
+                        {% else %}
+                        <option value="{{ county.county_name }}">{{ county.county_name }}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
                     <label for="county_name">County</label>
@@ -28,7 +32,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-shoe-prints prefix light-blue-text text-darken-4"></i>
-                    <input id="hike_distance" name="hike_distance" minlength="5" maxlength="50"
+                    <input id="hike_distance" name="hike_distance" minlength="1" maxlength="50"
                         value="{{ hike.hike_distance }}"type="text" class="validate" required>
                     <label for="hike_name">Distance</label>
                 </div>

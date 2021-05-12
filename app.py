@@ -151,12 +151,11 @@ def edit_hike(hike_id):
             "is_dog_friendly": is_dog_friendly
         }
         mongo.db.hikes.update({"_id": ObjectId(hike_id)}, submit)
-        counties = mongo.db.counties.find().sort("county_name", 1)
         flash("Hike Successfully Updated")
         return redirect(url_for("profile",username=session["user"]))
 
     counties = mongo.db.counties.find().sort("county_name", 1)
-    hike = mongo.db.hikes.find_one_or_404({"_id": ObjectId(hike_id)})
+    hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
     return render_template("edit_hike.html", hike=hike, counties=counties)
 
 
