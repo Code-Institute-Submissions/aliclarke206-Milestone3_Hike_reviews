@@ -21,6 +21,7 @@
                         <option value="" disabled selected>Choose County</option>
                         <option value="Antrim">Antrim</option>
                         <option value="Dublin">Dublin</option>
+                        <option value="Kerry">Kerry</option>
                     </select>
                     <label for="county_name">County</label>
                     </div>
@@ -29,7 +30,7 @@
                     <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
                     <select id="county_name" name="county_name" class="validate" required>
                         <option value="" disabled selected>Choose County</option>
-                        option value="Antrim">{{ counties.county_name }}</option>
+                        option value="{{ counties.county_name }}">{{ counties.county_name }}</option>
                         <option value="Antrim">Dublin</option>
                     </select>
                     <label for="county_name">County</label>
@@ -39,8 +40,15 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
-                    <input id="hike_duration" name="hike_duration" type="text" class="timepicker validate" required>
+                    <input id="hike_duration" name="hike_duration" type="text" class="validate" required>
                     <label for="hike_duration">Duration</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
+                    <input id="hike_distance" name="hike_distance" type="text" class="validate" required>
+                    <label for="hike_distance">Distance</label>
                 </div>
             </div>
             <div class="row">
@@ -61,6 +69,14 @@
                     <textarea id="hike_description" name="hike_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
                     <label for="hike_description">Hike Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="hike_location" name="hike_location" minlength="5"
+                        maxlength="200" class="validate" required></textarea>
+                    <label for="hike_location">Add Location URL </label>
                 </div>
             </div>
 			<div class="row">

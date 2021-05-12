@@ -115,6 +115,8 @@ def add_hike():
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
             "hike_description": request.form.get("hike_description"),
+            "hike_distance": request.form.get("hike_distance"),
+            "hike_location": request.form.get("hike_location"),
             "is_parking": is_parking,
             "hike_difficulty": request.form.get("hike_difficulty"),
             "hike_duration": request.form.get("hike_duration"),
@@ -138,6 +140,8 @@ def edit_hike(hike_id):
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
             "hike_description": request.form.get("hike_description"),
+            "hike_distance": request.form.get("hike_distance"),
+            "hike_location": request.form.get("hike_location"),
             "is_parking": is_parking,
             "hike_difficulty": request.form.get("hike_difficulty"),
             "hike_duration": request.form.get("hike_duration"),
@@ -176,7 +180,7 @@ def contact():
 @app.route("/get_counties")
 def get_counties():
     counties = list(mongo.db.counties.find().sort("county_name", 1))
-    return render_template("counties.html", counties=counties)
+    return render_template("get_counties.html", counties= counties)
     
 
 if __name__ == "__main__":
