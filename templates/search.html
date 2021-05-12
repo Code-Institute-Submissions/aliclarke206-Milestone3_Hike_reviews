@@ -32,8 +32,8 @@
 
     <!-- Featured Hikes  -->
     {% if hikes.count() > 0 %}
-    <div class="container hikes_home">
-<div class="row">
+    <div class="row hikes_home">
+    <div class="container">
     {% for hike in hikes %}
     <div class="col s12 m6 l4">
         <a href="{{ url_for('hike_page', hike_id=hike._id) }}">

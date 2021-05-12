@@ -20,10 +20,10 @@
             <div class="card hoverable blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title center-align"><u>{{ hike.hike_name }}</u></span>
-                    <p>{{ hike.hike_duration }}</p>
+                    <p>{{ hike.hike_duration }} hours</p>
                     <p>{{ hike.hike_difficulty }}</p>
                     <p>{{ hike.county_name }}</p>
-                    <p>{{ hike.hike_distance }}</p>
+                    <p>{{ hike.hike_distance }} km</p>
                     {% if hike.is_parking == "on" %}
                     <p>Parking</p>
                     {% else %}

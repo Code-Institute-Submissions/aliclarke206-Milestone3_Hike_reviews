@@ -25,19 +25,19 @@
                     <span class="title">County {{ hike.county_name }}</span>
     </li>
     <li class="collection-item">
-       <i class="fas fa-map-marker-alt center-align"></i>
+       <i class="fas fa-shoe-prints center-align"></i>
                     <span class="title"> {{ hike.hike_distance }}</span>
     </li>
     <li class="collection-item">
-       <i class="fas fa-map-marker-alt center-align"></i>
+       <i class="fas fa-dumbbell center-align"></i>
                     <span class="title"> {{ hike.hike_difficulty }}</span>
     </li>
     <li class="collection-item">
-      <i class="fas fa-map-marker-alt center-align"></i>
+      <i class="fas fa-clock center-align"></i>
                     <span class="title">{{ hike.hike_duration }}</span>
     </li>
     <li class="collection-item">
-      <i class="fas fa-map-marker-alt center-align"></i>
+      <i class="fas fa-car center-align"></i>
                     <span class="title">
                         {% if hike.is_parking == "on" %}
                 Parking
@@ -46,7 +46,7 @@
                 {% endif %}</span>
     </li>
     <li class="collection-item">
-      <i class="fas fa-map-marker-alt center-align"></i>
+      <i class="fas fa-dog center-align"></i>
                     <span class="title">
                         {% if hike.is_dog_friendly == "on" %}
                         Dog Friendly
@@ -56,7 +56,7 @@
     </li>
     <li class="collection-item">
         {% if session.user|lower == hike.created_by|lower %}
-                <a href="{{ url_for('edit_hike', hike_id=hike._id) }}"> Edit</a>
+                <a class="waves-effect waves-light btn" href="{{ url_for('edit_hike', hike_id=hike._id) }}"> Edit</a>
                 <a class="waves-effect waves-light btn modal-trigger " href="#modal1">Delete</a> 
                 {% endif %}
     </li>
