@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="add_login_image">
      <h3 class="center-align">Register</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
+            <div class="card-panel add_edit_container">
                 <!-- username -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -34,13 +34,14 @@
         </form>
     </div>
 
-    <div class="row">
+    <div class="row login_redirect">
         <div class="col s12">
             <p class="center-align">
                 Already Registered?
                 <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
             </p>
         </div>
+    </div>
     </div>
 
 

@@ -19,11 +19,10 @@
         <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
             <div class="card hoverable blue-grey darken-1">
                 <div class="card-content white-text">
-                    <span class="card-title">{{ hike.hike_name }}</span>
+                    <span class="card-title center-align"><u>{{ hike.hike_name }}</u></span>
                     <p>{{ hike.hike_duration }}</p>
                     <p>{{ hike.hike_difficulty }}</p>
                     <p>{{ hike.county_name }}</p>
-                    <p>{{ hike.hike_description }}</p>
                     <p>{{ hike.hike_distance }}</p>
                     {% if hike.is_parking == "on" %}
                     <p>Parking</p>

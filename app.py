@@ -28,8 +28,8 @@ def get_hikes():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query", "hike")
-    hikes = list(mongo.db.hikes.find({"$text": {"$search": query}}))
-    return render_template("hikes.html", hikes=hikes)
+    hikes = mongo.db.hikes.find({"$text": {"$search": query}})
+    return render_template("search.html", hikes=hikes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -151,6 +151,7 @@ def edit_hike(hike_id):
         mongo.db.hikes.update({"_id": ObjectId(hike_id)}, submit)
         counties = mongo.db.counties.find().sort("county_name", 1)
         flash("Hike Successfully Updated")
+        return redirect(url_for("profile",username=session["user"]))
 
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
     return render_template("edit_hike.html", hike=hike)

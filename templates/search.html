@@ -30,28 +30,8 @@
 </div>
     </div>
 
-    <!-- What we are content  -->
-
-    <div class="row landing_description">
-
-      <div class="col s12 m4 center-align">
-        <div class="row landing_icon"><i class="fas fa-search"></i> <br> Search </div> 
-        <div class="row"> A small piece about what it is this website is for and to discover the area, and explore and then leave a review </div>
-
-      </div>
-      <div class="col s12 m4 center-align">
-        <div class="row landing_icon"><i class="far fa-compass"></i> <br>Explore </div>
-        <div class="row"> A small piece about what it is this website is for and to discover the area, and explore and then leave a review  </div>
-      </div>
-      <div class="col s12 m4 center-align">
-        <div class="row landing_icon"><i class="fas fa-pen"></i> <br> Review</div>
-        <div class="row"> A small piece about what it is this website is for and to discover the area, and explore and then leave a review  </div>
-      </div>
-
-    </div>
-
-
     <!-- Featured Hikes  -->
+    {% if hikes.count() > 0 %}
     <div class="container hikes_home">
 <div class="row">
     {% for hike in hikes %}
@@ -100,6 +80,9 @@
     {% endfor %}
             </div>
     </div>
+    {% else %}
+        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+    {% endif %}
 
     <div class="parallax-container">
       <div class="parallax"><img src="static/images/landing_image.jpg" class="responsive-img"></div>
