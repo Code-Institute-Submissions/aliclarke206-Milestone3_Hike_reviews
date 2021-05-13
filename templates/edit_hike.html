@@ -34,7 +34,7 @@
                     <i class="fas fa-shoe-prints prefix light-blue-text text-darken-4"></i>
                     <input id="hike_distance" name="hike_distance" minlength="1" maxlength="50"
                         value="{{ hike.hike_distance }}"type="text" class="validate" required>
-                    <label for="hike_name">Distance</label>
+                    <label for="hike_name">Distance(km)</label>
                 </div>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
                     <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
                     <input id="hike_duration" name="hike_duration" type="text" 
                         value="{{ hike.hike_duration }}"class="validate" required>
-                    <label for="hike_duration">Duration</label>
+                    <label for="hike_duration">Duration (hours)</label>
                 </div>
             </div>
             <div class="row">
@@ -64,7 +64,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                     <textarea id="hike_description" name="hike_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
+                        maxlength="300" class="materialize-textarea validate" required>
                         {{- hike.hike_description -}}
                     </textarea>
                     <label for="hike_description">Leave a review</label>

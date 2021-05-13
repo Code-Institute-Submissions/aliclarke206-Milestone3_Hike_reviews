@@ -12,27 +12,26 @@ The basic strategy behind this application was to create a simple and easy to na
 
 As a user of this application: 
 
-* I would like one place to track and store daily tasks.
-* An ability to view sub categories and broken down tasks within these categories.
-* Ability to add and remove tasks.
-* Ability to check off when complete.
-* Monitoring of the progression of completed tasks.
-* Simplifies big tasks into smaller actions that compound over time. 
-* Creates a visual cue with a progression bar that encourages you to act.
-* Satisfying to record progress and check off tasks throughout the day. 
+* I would like to search for local hikes.
+* Read reviews and recommendations from other users.
+* See the location of the hikes.
+* See the difficulty of the hikes
+* Find information about the distance and amenities such as parking. 
+* I would like to be able to leave reviews and add my own recommendations. 
+* Be able to contact someone about any issues with any of the content or the hikes. 
 * Easy to use on desktop and mobile.
 * Simple design with no complicated format. 
 
 
 ### Scope
 The specifications and requirements for the site to adhere to the user stories include:
-* A form to easily create new task categories
-* A form to easily add new tasks to associated category
-* A checkbox to check and uncheck completed tasks
-* A button to clear completed tasks
-* A button to clear a category
-* A responsive counter to display tasks remaining
-* A progress bar to display progression of tasks completed
+* A search bar to easily find the hike you're looking for
+* A form to easily add new hikes
+* A contact page for the user to reach out to the site creator.
+* Links to social media accounts for more content.
+* A link to google maps with the location of the hike 
+* A single page with the break down of the key features of the hike such as difficulty and duration. 
+* A log in and out function so users have their own page of reviews that they have left.
 
 
 ### Structure
@@ -63,6 +62,7 @@ The surface of the site should be clean and simple. All the content is well spac
 * Easy, simple design to allow for seamless navigation.
 * Hike detail section to see key features of hike in bullet points.
 * Ability to customize hike details and add any extra relevant information. 
+* Users have their own profile which they can register and create their own password.
 * Hikes created by the user can be deleted using the delete hike button and added new hike using the “add new hike".
 * The user can contact the site creator directly by email. EmailJS sends the designated email address to let them know about the query. A screenshot of the recieved image is here [Email correspondence]()
 * Location is available through google maps API to compliment the key features of hike om details page.
@@ -72,10 +72,9 @@ The surface of the site should be clean and simple. All the content is well spac
 
 * Ability to favourite hikes and/or have a rating poll so hikes could be arranged in order of popularity.
 * Ability to interact more with each other as users to create a community amoung the reviewers, such as leaving comments under reviews to allow for more engagement between users to ask questions directly to other users. 
-* Adding a calender feature API to link with google calander so appointments automatically link to tasks. 
-* Along with the calender, tasks could then be integrated with a time stamp so  the day could be better planned out i.e tasks could have an added time frame to have task completed by.
-* For a mobile app, reminder notifications could also be installed to pop up if tasks were due to be completed at a certain time.
-* An ability to add links to other apps. For example, if 10,000 steps was a task to be completed, there would be an option to link your FitBit account to allow for seamless and automatic task completion without having to manually check it off. 
+* Adding a weather feature API to link with the location of the hikes so the user would be able to obtain information if it was a good day to visit the hike.
+* An ability to add links to other apps. For example, a Fitness wearable if the hike or trail was used for training.
+* Use the maps API to show the starting and end point of the hike and also its alternative routes. 
 ## Technologies Used
 
 1. CSS programming language
@@ -122,56 +121,119 @@ The Python was checked using the [Python code validator](http://pep8online.com/)
 
 
 Manual testing was carried out to ensure the site carries out the intentions of the user stories.
-On opening the page the category list is clear and visible and when a new category is typed into the form box a new category is created. Multiple categories can be created by continually adding to list.
 
-A pointer cursor is evident when mouse hovers over categories prompting the user that they are clickable. Also the opacity lowers to highlight the category being hovered over to again prompt the item to be clicked.
+##### Nav bar
+* Displays navigation elements according to user. If session isn’t a user it won’t display profile, add hike or logout element. The appropriate login or register elements appear. 
+* Responsive to drop down menu on smaller screens. 
 
-The opacity also lowers when the user attempts to type in the new category form box to encourage the user to add a category.
+##### Footer
+* Social links animation works on hover.
+* Socail links open to seperate tab. 
 
-When a category is selected the category font weight increases and stays in this highlighted state to signal to the user that this is the category selected.
+##### Search bar
+* Filters counties, and hike names correctly.
+* Flash message appears if no results are found
+* Reset button brings user back to home page if clicked. 
 
-When category is selected the corresponding task list appears. User is able to add to task list with form button as many times as they like.
+##### Feature Wall 
+* Displays hike reviews created by all users. 
+* Delete and edit buttons appear for those hikes which were created by the user.
+* Clicking on specific hike brings the user to indiviual detail page. 
 
-User is also prompted to enter new tasks as opacity lowers again and the underline transitions.
+##### Hike Detail Page
+* The correct hike details populate the key features field.
+* The Google maps iframe loads to the correct location of the hike using the hike name and county as parameters for search. 
+* The description correctly populates underneath the Google image. 
+* If the user is the creator of the review the edit and delete buttons appear at the bottom to link to the edit delete functionality. 
 
-When a task is completed it can be checked off and line goes through task item.
+##### Delete function
+* When delete function is called a warning message appears to confirm deletion.
+* If cancelled the user is brought back to page they were on.
+* If deleted, a flash message appears and user is returned to page they were on. 
+* Object Id is successfullly removed from the database
 
-The task counter responds correctly to remaining tasks and the word task changes to plural tasks when a value of more than one is in the count. 
+##### Edit function
+* The form pre populates with the information from the hike id it was on. 
+* The drop down menu populates with the counties from the counties collection from the database. 
+* If edited, a flash message appears and user is returned to their profile page. 
+* Object ID is succesfullly updated in the database.
 
-The progress bar responds correctly to remaining tasks.
+##### Add hike function
+* The drop down menu populates with the counties from the counties collection from the database. 
+* If added, a flash message appears and user is returned to their profile page.
+* Object ID is succesfullly added in the database.
 
-The title of the task list changes to correspond with category selected.
+##### Login/Logout and Register functionality
+* Flash messages appear to update the user that they have been either logged in, logged out, newly registered or if the username or password is incorrect. 
+* If logged in the user is directed to their profile page
+* When logged out the session user is removed and is redirected back to login page. 
 
-The tasks can be unchecked by re-clicking the tasks.
-
-The clear complete buttons clear any checked tasks.
-
-The delete category button clears the highlighted category.
-
-When page is refreshed all the information has been stored on local storage and is still available.
+##### Contact Page
+* Social links animation move on hover
+* Once form is filled in and send message is clicked, there is a message displayed directly after to acknowledge that the email has been sent. An email was recieved by the creator and the correspondence is [linked here](emailJS/image/emailJS_screenshot.jpg).
 
 The project was also tested on multiple browsers (Chrome, Microsoft edge, Internet Explorer, and Firefox) and device sizes to ensure compatibility and responsiveness.
 
-There is a message displayed directly after to acknowledge that the email has been sent.
 
-#### Bugs
-* The progress bar updates when the selected category is highlighted and works when tasks are checked and unchecked but when a new category is selected it doesnt auto update along with the task count. Once a task is checked or unchecked it updates, but not automatically. But managed to fix it as the varibale selectedList needed to be redefined. 
-white space issue when putting hike description in edit hike area. solved with minus within jinga template
+
+#### Bugs 
+
+* white space issue when putting hike description in edit hike area. Solved with minus within jinga template
 ## Deployment
+
+The source code for this website was deployed and stored in a GitHub repository while the website application is hosted by Heroku. The two are linked so any new commits or pushes to GitHub's master branch are also updated on the Heroku hosting service. The database for this website is hosted in a cluster on MongoDB.
+Link to Heroku live site is [here](https://hike-review-milestone3.herokuapp.com/).
+
+### Heroku Cloud
+Heroku service allows for the deployment of our app as a live website, below are the steps required to host a project:
+
+##### Create a new app linked to Github:
+* On Heroku website create a user account as required.
+* Once registered, click "New" in the top right and "Create App" from the dropdown.
+* Choose a name and region and then create app button.
+* Once on your new app page, select the "Settings" header and scroll to Config Var. Here you can click "reveal Config Vars" to add new configuration details.
+* Assign a variable of 'IP' with a value of '0.0.0.0', next another named 'PORT' with a value of '5000'. 
+* Next add any URI, DBNAME, SECRET_KEYS or other variables you do not want to be public.
+* From your gitpod/VSCode, create a file named Procfile. Enter 'web: python app.py', to help Heroku assess what sort of app you are creating.
+* Next, in the command line type 'pip3 freeze --local > requirements.txt' to automatically generate a file with any flask or python tools which are used in creating/using your project.
+* Go back to Heroku and select the "Deploy" option. Under "Deployment method", select the "Github: Connect to Github" option.
+* Type in the repository which you want to host and search. 
+* Once connected, select "Choose branch to deploy" and choose master. Then, click the "Enable Automatic Deploys" button which will enable automatic updates to heroku app.
+* Click "Deploy branch".
+* The app should now be successfully deployed and any github pushes should also be updated to the heroku app. 
+
+##### How to clone the repository:
+
+* From the GitHub dashboard, chose the repository you wish to clone.
+* Click the green “Code” button.
+* Choose the “Clone with HTTPS” clipboard icon.
+* Open Git Bash and change the working directory to the location you would like the clone to be.
+* Type git clone, and pass the URL you have copied. (Should be in the format $ git clone https://github.com/username/repository.) and click "Enter".
+
+##### Running the application locally:
+* Clone the repository as shown above.
+* Install the necessary libraries specified in the requirements.txt.
+* Create a new file named env.py and add your variables to it.
+* Create a gitignore file and include env.py so the information is not oassed to the master branch.
+* In your app.py file, 'Import' your env.py file.
+* Using 'python3 app.py' in the command line you can run the project.
+
+#### GitHub
 
 A repository was created on GitHub and Gitpod was used to write the code. The code was commited and pushed to Github regularly to ensure it was saved. The GitHub repository was then deployed to GitHub pages by:
 
 1. Logging into GitHub
-2. Selecting repositories and then MileStoneProject2_TaskTracker.
+2. Selecting repositories and then Milestone3_Hike_reviews.
 3. Then select settings from the top menu bar.
 4. Under GitHub pages
 5. Under source, select master branch.
 6. The website is now deployed and a link appears for the deployed site.
 7. This link can now be cloned and run locally.
 
-## Credits
-copied custom validation for the form from the tutuorial
+## Credit
+* Custom validation for the add/edit form for the bug in the materializecss class from thecode institute tutuorial.
 ### Content
+Some of the content about the hikes and trails were sourced from [All Trails](https://www.alltrails.com/). 
 
 ### Media
 #### Image
@@ -187,6 +249,6 @@ The source for the background images were from the following stories
 
 
 ### Acknowledgements
-I got inspiration for this project as I like to try and keep organised but tend to keep lists everywhere and don’t have them grouped into types and headings. Having one place to go for references and has all my tasks stored and broken down into smaller individually items is extremely handy. Also the progress bar is encouraging to get the list completed. 
+The code institute tutorials were very helpful to grasp new concepts and fucntionalitys. Inspiration from hiking sites such as [All Trails](https://www.alltrails.com/) really helped to create some of the UX design. 
 
 Also my mentor, Brian Macharia for helping me along the way!
