@@ -110,7 +110,6 @@ nav .sidenav-trigger i {
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
-    margin:auto;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding: 3.75rem;
@@ -127,7 +126,6 @@ nav .sidenav-trigger i {
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
-    margin:auto;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding: 3.75rem;
@@ -139,12 +137,12 @@ nav .sidenav-trigger i {
     filter: drop-shadow(2px 3px 3px black);
 }
 
+
 .landing_icon_3 {
     background-image: url(../images/landing_icon_3.jpg);
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
-    margin:auto;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding: 3.75rem;
@@ -155,6 +153,7 @@ nav .sidenav-trigger i {
     color: #fffef7;
     filter: drop-shadow(2px 3px 3px black);
 }
+
 /* ----------------------------Search Bar*/
 
 .parallax-container .card-panel{

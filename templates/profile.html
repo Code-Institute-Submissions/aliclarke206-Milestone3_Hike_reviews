@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="card-action">
-                    <a href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
+                    <a class="waves-effect waves-light btn" href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
                     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a>
 
                 </div>
@@ -54,7 +54,7 @@
                         <div class="modal-footer">
                             <a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
                                 class="modal-close waves-effect waves-green btn-flat">Delete</a>
-                            <a href="{{ url_for('get_hikes') }}"
+                            <a href="{{ url_for('profile', username=session['user']) }}"
                                 class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                         </div>
                     </div>
