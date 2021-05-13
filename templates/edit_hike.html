@@ -1,121 +1,121 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="add_edit_image">
+<div class="add_edit_image">
     <h3 class="text-teal darken-4 center-align">Edit Hike</h3>
     <div class="container">
-    <div class="row card-panel grey lighten-5 add_edit_container">
-        <form class="col s12" method="POST" action="{{ url_for('edit_hike', hike_id=hike._id) }}">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="hike_name" name="hike_name" minlength="5" maxlength="50"
-                        value="{{ hike.hike_name }}"type="text" class="validate" required>
-                    <label for="hike_name">Hike Name</label>
+        <div class="row card-panel grey lighten-5 add_edit_container">
+            <form class="col s12" method="POST" action="{{ url_for('edit_hike', hike_id=hike._id) }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                        <input id="hike_name" name="hike_name" minlength="5" maxlength="50" value="{{ hike.hike_name }}"
+                            type="text" class="validate" required>
+                        <label for="hike_name">Hike Name</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
-                    <select id="county_name" name="county_name" class="validate" required>
-                        <option value="{{ hike.county_name }}" disabled selected>{{ hike.county_name }}</option>
-                        {% for county in counties %} 
-                        {% if county.county_name == hike.category_name %}
-                        <option value="{{ county.county_name }}">{{ county.county_name }}</option>
-                        {% else %}
-                        <option value="{{ county.county_name }}">{{ county.county_name }}</option>
-                        {% endif %}
-                        {% endfor %}
-                    </select>
-                    <label for="county_name">County</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
+                        <select id="county_name" name="county_name" class="validate" required>
+                            <option value="{{ hike.county_name }}" disabled selected>{{ hike.county_name }}</option>
+                            {% for county in counties %}
+                            {% if county.county_name == hike.category_name %}
+                            <option value="{{ county.county_name }}">{{ county.county_name }}</option>
+                            {% else %}
+                            <option value="{{ county.county_name }}">{{ county.county_name }}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label for="county_name">County</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-shoe-prints prefix light-blue-text text-darken-4"></i>
-                    <input id="hike_distance" name="hike_distance" minlength="1" maxlength="50"
-                        value="{{ hike.hike_distance }}"type="text" class="validate" required>
-                    <label for="hike_name">Distance(km)</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-shoe-prints prefix light-blue-text text-darken-4"></i>
+                        <input id="hike_distance" name="hike_distance" minlength="1" maxlength="50"
+                            value="{{ hike.hike_distance }}" type="text" class="validate" required>
+                        <label for="hike_name">Distance(km)</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
-                    <input id="hike_duration" name="hike_duration" type="text" 
-                        value="{{ hike.hike_duration }}"class="validate" required>
-                    <label for="hike_duration">Duration (hours)</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
+                        <input id="hike_duration" name="hike_duration" type="text" value="{{ hike.hike_duration }}"
+                            class="validate" required>
+                        <label for="hike_duration">Duration (hours)</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-dumbbell prefix light-blue-text text-darken-4"></i>
-					<select id="hike_difficulty" name="hike_difficulty" class="validate" required>
-                        <option value="" disabled>Choose Difficulty</option>
-                        {% if hike.hike_difficulty == hike.hike_difficulty %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-dumbbell prefix light-blue-text text-darken-4"></i>
+                        <select id="hike_difficulty" name="hike_difficulty" class="validate" required>
+                            <option value="" disabled>Choose Difficulty</option>
+                            {% if hike.hike_difficulty == hike.hike_difficulty %}
                             <option value="{{ hike.hike_difficulty }}" selected>{{ hike.hike_difficulty }}</option>
-                        {% endif %}
+                            {% endif %}
                             <option value="Easy">Easy</option>
                             <option value="Moderate">Moderate</option>
                             <option value="Difficult">Difficult</option>
-                    </select>
-					<label for="hike_difficulty">Difficulty</label>
-				</div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="hike_description" name="hike_description" minlength="5"
-                        maxlength="300" class="materialize-textarea validate" required>
+                        </select>
+                        <label for="hike_difficulty">Difficulty</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                        <textarea id="hike_description" name="hike_description" minlength="5" maxlength="300"
+                            class="materialize-textarea validate" required>
                         {{- hike.hike_description -}}
                     </textarea>
-                    <label for="hike_description">Leave a review</label>
+                        <label for="hike_description">Leave a review</label>
+                    </div>
                 </div>
-            </div>
-			<div class="row">
-				<div class="input-field col s12 m6">
-					<div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
-						<label for="is_parking">
-                            {% if hike.is_parking == "on" %}
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <div class="switch">
+                            <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+                            <label for="is_parking">
+                                {% if hike.is_parking == "on" %}
                                 <input type="checkbox" id="is_parking" name="is_parking" checked>
-                            {% else %}
+                                {% else %}
                                 <input type="checkbox" id="is_parking" name="is_parking">
-                            {% endif %}
-                            <span class="lever"></span>
-                            Parking
-                        </label>
-					</div>
-                </div>
-                <div class="input-field col s12 m6">
-					<div class="switch">
-                        <i class="fas fa-dog prefix light-blue-text text-darken-4"></i>
-						<label for="is_dog_friendly">
-                            {% if hike.is_dog_friendly == "on" %}
+                                {% endif %}
+                                <span class="lever"></span>
+                                Parking
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <div class="switch">
+                            <i class="fas fa-dog prefix light-blue-text text-darken-4"></i>
+                            <label for="is_dog_friendly">
+                                {% if hike.is_dog_friendly == "on" %}
                                 <input type="checkbox" id="is_dog_friendly" name="is_dog_friendly" checked>
-                            {% else %}
+                                {% else %}
                                 <input type="checkbox" id="is_dog_friendly" name="is_dog_friendly">
-                            {% endif %}
-                            <span class="lever"></span>
-                            Dog Friendly
-                        </label>
-					</div>
-				</div>
-            </div>
-            <!--Buttons-->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!--Cancel Button-->
-                    <a href="{{ url_for('get_hikes') }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <!--Edit Button-->
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Hike <i class="fas fa-edit right"></i>
-                    </button>
+                                {% endif %}
+                                <span class="lever"></span>
+                                Dog Friendly
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <!--Buttons-->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!--Cancel Button-->
+                        <a href="{{ url_for('get_hikes') }}" class="btn-large red text-shadow">
+                            Cancel <i class="fas fa-times-circle right"></i>
+                        </a>
+                        <!--Edit Button-->
+                        <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                            Edit Hike <i class="fas fa-edit right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
-    </div>
+</div>
 
 {% endblock %}

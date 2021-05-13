@@ -32,9 +32,9 @@ nav .sidenav-trigger i {
 
 /* ----------------------------------------Footer */
 .social-links li a i {
-    width: 32px;
-    height: 32px;
-    padding: 12px 0;
+    width: 65px;
+    height: 65px;
+    padding: 27px 0;
     border-radius: 50%;
     font-size: 13px;
     line-height: 7px;
@@ -46,6 +46,7 @@ nav .sidenav-trigger i {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
 
 .social-links li a i:hover {
     background: #e84610;
@@ -107,13 +108,17 @@ nav .sidenav-trigger i {
 
 .landing_icon_1 {
     background-image: url(../images/landing_icon_1.jpg);
-    height: 12rem;
-    width: 12rem;
+    height: 22rem;
+    width: 22rem;
     border-radius: 50%;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding: 3.75rem;
+    margin-left: 0;
+    margin-right: 0;
+
 }
+
 
 .landing_icon_1 i {
     font-size: 4rem;
@@ -123,8 +128,8 @@ nav .sidenav-trigger i {
 
 .landing_icon_2 {
     background-image: url(../images/landing_icon_2.jpg);
-    height: 12rem;
-    width: 12rem;
+    height: 22rem;
+    width: 22rem;
     border-radius: 50%;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -140,8 +145,8 @@ nav .sidenav-trigger i {
 
 .landing_icon_3 {
     background-image: url(../images/landing_icon_3.jpg);
-    height: 12rem;
-    width: 12rem;
+    height: 22rem;
+    width: 22rem;
     border-radius: 50%;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -154,6 +159,22 @@ nav .sidenav-trigger i {
     filter: drop-shadow(2px 3px 3px black);
 }
 
+.row.landing_icon_3 {
+    margin-right: 0;
+    margin-left: 40px;
+}
+
+.row.landing_icon_2 {
+    margin-right: 0;
+    margin-left: 40px;
+    
+}
+
+.row.landing_icon_1 {
+    margin-right: 0;
+    margin-left: 40px;
+    
+}
 /* ----------------------------Search Bar*/
 
 .parallax-container .card-panel{

@@ -2,128 +2,79 @@
 {% block content %}
 <div class="add_contact_image">
     <h3 class="text-teal darken-4 center-align">Contact Us</h3>
-<div class="container">
-    <div class="row contact_request">
-        <div class="col m4 s12">
+    <div class="container">
+        <div class="row contact_request">
             <div class="row">
-               <h4 class="center-align">Connect with us here!</h4>
+                    <h4 class="center-align">Connect with us on Socials or drop us a line and we'll get back to you!!</h4>
+                </div>
+            <div class="col m4 s12">
+                <div class="row">
+                    <ul class="list-inline social-links center-align">
+                        <li class="list-inline-item">
+                            <a target="_blank" href="https://www.facebook.com/">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" href="https://twitter.com/">
+                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" href="https://ie.linkedin.com/">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" href="https://www.instagram.com/">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" href="https://www.pinterest.com/">
+                                <i class="fab fa-pinterest" aria-hidden="true"></i>
+                                <span class="sr-only">Pinterest</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-                <ul class="list-inline social-links center-align">
-               <li class="list-inline-item">
-                  <a target="_blank" href="https://www.facebook.com/">
-                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                  <span class="sr-only">Facebook</span>
-                  </a>
-               </li>
-               <li class="list-inline-item">
-                  <a target="_blank" href="https://twitter.com/">
-                  <i class="fab fa-twitter" aria-hidden="true"></i>
-                  <span class="sr-only">Twitter</span>
-                  </a>
-               </li>
-               <li class="list-inline-item">
-                  <a target="_blank" href="https://ie.linkedin.com/">
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                  <span class="sr-only">LinkedIn</span>
-                  </a>
-               </li>
-               <li class="list-inline-item">
-                  <a target="_blank" href="https://www.instagram.com/">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                  <span class="sr-only">Instagram</span>
-                  </a>
-               </li>
-               <li class="list-inline-item">
-                  <a target="_blank" href="https://www.pinterest.com/">
-                  <i class="fab fa-pinterest" aria-hidden="true"></i>
-                  <span class="sr-only">Pinterest</span>
-                  </a>
-               </li>
-            </ul>
+
+            <div class="col m8 s12">
+                <form id="contact_form">
+                    <div class="field">
+                        <label for="from_name">Name</label>
+                        <input type="text" name="from_name" id="from_name">
+                    </div>
+                    <div class="field">
+                        <label for="from_email">Email Address</label>
+                        <input type="text" name="from_email" id="from_email">
+                    </div>
+                    <div class="field">
+                        <label for="query">Query</label>
+                        <select id="query" name="query">
+                            <option value="" disabled selected>Choose Query</option>
+                            <option value="General query">General query</option>
+                            <option value="Report an information error">Report an information error</option>
+                            <option value="Log in issues">Log in issues</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="message">message</label>
+                        <textarea id="message" name="message" placeholder="Write something.."
+                            style="height:200px"></textarea>
+                    </div>
+                    <input type="submit" id="button" value="Send Email" class="center-align">
+                </form>
             </div>
+
 
         </div>
-    
-       <div class="col m8 s12">
-           <div class="row">
-               <h4 class="center-align">Or drop us a line and we'll get back to you!</h4>
-            </div>
-    <form id="contact_form">
-  <div class="field">
-    <label for="from_name">Name</label>
-    <input type="text" name="from_name" id="from_name">
-  </div>
-  <div class="field">
-    <label for="from_email">Email Address</label>
-    <input type="text" name="from_email" id="from_email">
-  </div>
-    <div class="field">
-      <label for="query">Query</label>
-        <select id="query" name="query">
-        <option value="" disabled selected>Choose Query</option>
-        <option value="General query">General query</option>
-        <option value="Report an information error">Report an information error</option>
-        <option value="Log in issues">Log in issues</option>
-        <option value="Other">Other</option>
-      </select>
     </div>
-  <div class="field">
-    <label for="message">message</label>
-    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
-  </div>
-  <input type="submit" id="button" value="Send Email" class="center-align" >
-</form>
 </div>
-
-
-</div>
-</div>
-</div>
-
-<!-- second form
-<div class="col m6 s12">
-        <form action="/action_page.php">
-  <div class="row">
-    <div class="col-25">
-      <label for="fname">First Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="lname">Last Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="country">Country</label>
-    </div>
-    <div class="col-75">
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="subject">Subject</label>
-    </div>
-    <div class="col-75">
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <input type="submit" value="Submit">
-  </div>
-  </form>
-  </div>
-</div> -->
 {% endblock %}

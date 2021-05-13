@@ -4,172 +4,116 @@
 <!-- Landing section and search bar  -->
 
 <div class="parallax-container">
-      <div class="parallax"><img src="static/images/landing_image.jpg" class="responsive-img"></div>
-      <div class="container">
-          <div class="row center-align">
-              <h2>Find your next hike</h2>
-          </div>
-      <div class="card-panel grey lighten-5">
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
+    <div class="parallax"><img src="static/images/landing_image.jpg" class="responsive-img"></div>
+    <div class="container">
         <div class="row center-align">
-            <div class="input-field col s12 m8">
-                <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                <label for="query">Search by county, park or hike name</label>
-            </div>
-            <div class="col s12 m4 search_buttons">
-                <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">
-                    <i class="fas fa-undo left"></i>Reset</a>
-                <button type="submit" class="light-blue darken-1 btn text-shadow">
-                    <i class="fas fa-search left"></i> Search
-                </button>
-            </div>
+            <h2>Find your next hike</h2>
         </div>
-    </form>
-</div>
-</div>
+        <div class="card-panel grey lighten-5">
+            <form action="{{ url_for('search') }}" method="post" class="col s12">
+                <div class="row center-align">
+                    <div class="input-field col s12 m8">
+                        <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                        <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                        <label for="query">Search by county, park or hike name</label>
+                    </div>
+                    <div class="col s12 m4 search_buttons">
+                        <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">
+                            <i class="fas fa-undo left"></i>Reset</a>
+                        <button type="submit" class="light-blue darken-1 btn text-shadow">
+                            <i class="fas fa-search left"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <!-- What we are content  -->
+<!-- What we are content  -->
 
-    <div class="row landing_description">
-      <div class="col s12 m4">
-        <div class="row landing_icon_1 center-align"><i class="fas fa-search"></i></div> 
+<div class="row landing_description">
+    <div class="col s12 m4">
+        <div class="row landing_icon_1 center-align"><i class="fas fa-search"></i></div>
         <div class="row center-align">
             <h4>Search</h4><br>
-            small piece about what it is this website is for and to discover the area, and explore and then leave a review </div>
+            Look through the hikes around the country, search and filter for types of walk and key features such as parking.
         </div>
-      <div class="col s12 m4 center-align">
+    </div>
+    <div class="col s12 m4 center-align">
         <div class="row landing_icon_2"><i class="far fa-compass"></i></div>
         <div class="row">
             <h4>Explore</h4><br>
-             A small piece about what it is this website is for and to discover the area, and explore and then leave a review  </div>
-      </div>
-      <div class="col s12 m4 center-align">
+            Get out and explore, take the road less traveled. Stay safe and have fun!
+        </div>
+    </div>
+    <div class="col s12 m4 center-align">
         <div class="row landing_icon_3"><i class="fas fa-pen"></i></div>
         <div class="row">
             <h4>Review</h4><br>
-             A small piece about what it is this website is for and to discover the area, and explore and then leave a review  </div>
-      </div>
-
-    </div>
-
-
-    <!-- Featured Hikes  -->
-    <div class="row hikes_home">
-        <h4 class="text-grey lighten-5 center-align">Feature Wall</h4>
-    <div class="container">
-    {% for hike in hikes %}
-    <div class="col s12 m6 l4">
-        <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
-        <div class="card hoverable blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title center-align"><u>{{ hike.hike_name }}</u></span>
-                <p>{{ hike.hike_duration }} hours</p>
-                <p>{{ hike.hike_difficulty }}</p>
-                <p>{{ hike.county_name }}</p>
-                <p>{{ hike.hike_distance }} km</p>
-                {% if hike.is_parking == "on" %}
-                <p>Parking</p>
-                {% else %}
-                <p>No Parking</p>
-                {% endif %}
-                {% if hike.is_dog_friendly == "on" %}
-                <p>Dog Friendly</p>
-                {% else %}
-                <p>Not dog friendly</p>
-                {% endif %}
-                <p><em>by : {{ hike.created_by }}</em></p>
-
-            </div>
-            <div class="card-action">
-                {% if session.user|lower == hike.created_by|lower %}
-                <a class="waves-effect waves-light btn" href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a> 
-                {% endif %}
-            </div>
+            Share where you've been! Peaks and pits of all your adventures! Things are best when shared by those who know them best.
         </div>
-    </a>
-    </div>
-    <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Are you Sure you want to delete?</h4>
-                        <p>Your hike will be permanently removed from the database</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="{{ url_for('delete_hike', hike_id=hike._id) }}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
-                        <a href="{{ url_for('get_hikes') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                    </div>
-                </div>
-    {% endfor %}
-            </div>
     </div>
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="static/images/landing_image.jpg" class="responsive-img"></div>
-    </div>
-
-<!--<div class="row card-panel grey lighten-5">
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
-        <div class="row valign-wrapper center-align">
-            <div class="input-field col s12 m8">
-                <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                <label for="query">Search Hikes</label>
-            </div>
-            <div class="col s12 m4">
-                <a href="{{ url_for('get_hikes') }}" class="red btn text-shadow">Reset</a>
-                <button type="submit" class="light-blue darken-1 btn text-shadow">
-                    <i class="fas fa-search left"></i> Search
-                </button>
-            </div>
-        </div>
-    </form>
 </div>
 
 
-<div class="row">
-    {% for hike in hikes %}
-    <div class="col s12 m4">
-        <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
-        <div class="card hoverable blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">{{ hike.hike_name }}</span>
-                <p>{{ hike.hike_duration }}</p>
-                <p>{{ hike.hike_difficulty }}</p>
-                <p>{{ hike.county_name }}</p>
-                <p>{{ hike.hike_description }}</p>
-                <p>{{ hike.hike_distance }}</p>
-                {% if hike.is_parking == "on" %}
-                <p>Parking</p>
-                {% else %}
-                <p>No Parking</p>
-                {% endif %}
-                <p><em>by : {{ hike.created_by }}</em></p>
+<!-- Featured Hikes  -->
+<div class="row hikes_home">
+    <h4 class="text-grey lighten-5 center-align">Feature Wall</h4>
+    <div class="container">
+        {% for hike in hikes %}
+        <div class="col s12 m6 l4">
+            <a href="{{ url_for('hike_page', hike_id=hike._id) }}">
+                <div class="card hoverable blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title center-align"><u>{{ hike.hike_name }}</u></span>
+                        <p>{{ hike.hike_duration }} hours</p>
+                        <p>{{ hike.hike_difficulty }}</p>
+                        <p>{{ hike.county_name }}</p>
+                        <p>{{ hike.hike_distance }} km</p>
+                        {% if hike.is_parking == "on" %}
+                        <p>Parking</p>
+                        {% else %}
+                        <p>No Parking</p>
+                        {% endif %}
+                        {% if hike.is_dog_friendly == "on" %}
+                        <p>Dog Friendly</p>
+                        {% else %}
+                        <p>Not dog friendly</p>
+                        {% endif %}
+                        <p><em>by : {{ hike.created_by }}</em></p>
 
-            </div>
-            <div class="card-action">
-                {% if session.user|lower == hike.created_by|lower %}
-                <a href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a> -->
-
-                <!-- Modal Structure -->
-              <!-- <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Are you Sure you want to delete?</h4>
-                        <p>Your hike will be permanently removed from the database</p>
                     </div>
-                    <div class="modal-footer">
-                        <a href="{{ url_for('delete_hike', hike_id=hike._id) }}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
-                        <a href="{{ url_for('get_hikes') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                    <div class="card-action">
+                        {% if session.user|lower == hike.created_by|lower %}
+                        <a class="waves-effect waves-light btn"
+                            href="{{ url_for('edit_hike', hike_id=hike._id) }}">Edit</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a>
+                        {% endif %}
                     </div>
                 </div>
-                {% endif %}
+            </a>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Are you Sure you want to delete?</h4>
+                <p>Your hike will be permanently removed from the database</p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
+                    class="modal-close waves-effect waves-green btn-flat">Delete</a>
+                <a href="{{ url_for('get_hikes') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
             </div>
         </div>
-    </a>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div> -->
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="static/images/landing_image.jpg" class="responsive-img"></div>
+</div>
+
+
 {% endblock %}

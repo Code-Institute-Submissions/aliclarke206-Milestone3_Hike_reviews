@@ -228,7 +228,7 @@ A repository was created on GitHub and Gitpod was used to write the code. The co
 4. Under GitHub pages
 5. Under source, select master branch.
 6. The website is now deployed and a link appears for the deployed site.
-7. This link can now be cloned and run locally.
+7. This [link](https://aliclarke206.github.io/Milestone3_Hike_reviews/) can now be cloned and run locally.
 
 ## Credit
 * Custom validation for the add/edit form for the bug in the materializecss class from thecode institute tutuorial.

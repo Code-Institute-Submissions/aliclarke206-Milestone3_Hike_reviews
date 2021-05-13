@@ -56,9 +56,3 @@ document.getElementById('contact_form')
         });
     }
 });
-
-
-    
-
-
-

@@ -93,7 +93,8 @@ def profile(username):
     hikes = mongo.db.hikes.find()
 
     if session["user"]:
-        return render_template("profile.html", username=session["user"], hikes=hikes)
+        return render_template(
+            "profile.html", username=session["user"], hikes=hikes)
 
     return redirect(url_for("login"))
 
@@ -109,8 +110,10 @@ def logout():
 @app.route("/add_hike", methods=["GET", "POST"])
 def add_hike():
     if request.method == "POST":
-        is_parking = "on" if request.form.get("is_parking") else "off"
-        is_dog_friendly = "on" if request.form.get("is_dog_friendly") else "off"
+        is_parking = "on" if request.form.get(
+            "is_parking") else "off"
+        is_dog_friendly = "on" if request.form.get(
+            "is_dog_friendly") else "off"
         hike = {
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
@@ -125,19 +128,19 @@ def add_hike():
         }
         mongo.db.hikes.insert_one(hike)
         flash("Hike Successfully Added")
-        return redirect(url_for("profile",username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     counties = mongo.db.counties.find().sort("county_name", 1)
-    #print(counties.count())
     return render_template("add_hike.html", counties=counties)
-
 
 
 @app.route("/edit_hike/<hike_id>", methods=["GET", "POST"])
 def edit_hike(hike_id):
     if request.method == "POST":
-        is_parking = "on" if request.form.get("is_parking") else "off"
-        is_dog_friendly = "on" if request.form.get("is_dog_friendly") else "off"
+        is_parking = "on" if request.form.get(
+            "is_parking") else "off"
+        is_dog_friendly = "on" if request.form.get(
+            "is_dog_friendly") else "off"
         submit = {
             "county_name": request.form.get("county_name"),
             "hike_name": request.form.get("hike_name"),
@@ -152,7 +155,7 @@ def edit_hike(hike_id):
         }
         mongo.db.hikes.update({"_id": ObjectId(hike_id)}, submit)
         flash("Hike Successfully Updated")
-        return redirect(url_for("profile",username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     counties = mongo.db.counties.find().sort("county_name", 1)
     hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
