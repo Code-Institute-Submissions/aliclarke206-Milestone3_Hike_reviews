@@ -6,8 +6,7 @@ This project is a simple and responsive design to allow users to easily search, 
 ## Ux
 ### Strategy
 
-The basic strategy behind this application was to build a simple and easy to navigate site where all the daily tasks are stored in one place. It’s broken down into different categories to allow the user to amend to different lists and segregate tasks so all the tasks within one list are relevant to one another. It allows for better organisation of daily tasks.
-The objectives behind building the site were to create a single place where users could come to track and organise their daily tasks and habits.
+The basic strategy behind this application was to create a simple and easy to navigate where users could search for hikes in their area or selected county, explore the hikes themselves and then leave a review and recommendations for future hikers. The objective was to create a community for hike lovers to share and recommend the best places or even to avoid. 
 
 **User Stories**
 
@@ -37,12 +36,10 @@ The specifications and requirements for the site to adhere to the user stories i
 
 
 ### Structure
-To ensure not to overload the user with all the tasks at once, the corresponding tasks linked to the category are displayed responsively. Once the user clicks on a category the corresponding task list changes.  This interaction design makes it very easy for the user to navigate through their category lists and corresponding task lists. 
-All the data is stored in local storage so when the user goes back to the page the completed and uncompleted tasks are still there along with the categories they fall under.
+The site is linked with the MongoDB database to allow the user to easily obtain new information correlating with the selected hike. The user can filter through using the search bar and then click each individual hike for more detailed information. The EmailJS functionality makes it easier for the user to make contact.  And the location of the hikes is easily found with the google maps link associated with the hike
 
 ### Skeleton
-The structure of the site was designed in such a way that everything should be visible on the one page. There is no need to navigate away from the page and all the information is visible all together. The categories list is arranged on the left hand side in a smaller box and when clicked the corresponding task box appears on the right in a larger box. This is to accommodate left to right design and also as there typically would be more tasks than categories, the bigger task box allows for the larger task list to be seen clearer. 
-The structure mock ups were roughly done on [Balsamiq WireFrames](https://balsamiq.com/) . 
+The skeleton of the site was designed to be clean and simple and easy to navigate. The information was largely displayed in bullet point form so the user wasn’t overloaded with information. The user can navigate to a single detail page for the hike for added description and location. The users profile link, login and logout functions, add hike functionality are all displayed in the navigation bar. The navigation bar is also responsive to all screens weather on mobile, tablet or desktop. The card panels are displayed on the main page or users can also filter through using the search function. The skeleton mock ups were roughly done on [Balsamiq WireFrames](https://balsamiq.com/) . 
 
 [Home Page](wireframes/home_page.png)
 
@@ -58,7 +55,7 @@ The structure mock ups were roughly done on [Balsamiq WireFrames](https://balsam
 
 
 ### Surface
-The surface of the site should be clean and simple. As the content is all on one page it should not be overloaded with graphics and animations. Easy to follow and neutral colours as bright colours can come across alarming especially if there are many tasks appearing on the screen. 
+The surface of the site should be clean and simple. All the content is well spaced out and not overloaded with graphics and animations. Easy to follow and one main background image with hiking imagery.
 
 
 ## Features
@@ -73,6 +70,8 @@ The surface of the site should be clean and simple. As the content is all on one
 
 ### Features Left to Implement
 
+* Ability to favourite hikes and/or have a rating poll so hikes could be arranged in order of popularity.
+* Ability to interact more with each other as users to create a community amoung the reviewers, such as leaving comments under reviews to allow for more engagement between users to ask questions directly to other users. 
 * Adding a calender feature API to link with google calander so appointments automatically link to tasks. 
 * Along with the calender, tasks could then be integrated with a time stamp so  the day could be better planned out i.e tasks could have an added time frame to have task completed by.
 * For a mobile app, reminder notifications could also be installed to pop up if tasks were due to be completed at a certain time.
